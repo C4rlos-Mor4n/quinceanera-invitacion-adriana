@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #154734;
+  --foreground: 145 40% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 145 40% 10%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 145 40% 10%;
+  --primary: 145 60% 25%;
+  --primary-foreground: 145 40% 98%;
+  --secondary: 145 40% 96%;
+  --secondary-foreground: 145 40% 10%;
+  --muted: 145 40% 96%;
+  --muted-foreground: 145 30% 40%;
+  --accent: 145 40% 96%;
+  --accent-foreground: 145 40% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 145 40% 90%;
+  --input: 145 40% 90%;
+  --ring: 145 60% 25%;
+  --radius: 0.5rem;
+  --gold: 45 85% 50%;
+  --theme-green: 145 60% 25%;
+  --lotus: 330 50% 70%;
+}
+
+html {
+  background: var(--background);
+  min-height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  background: var(--background);
+  min-height: 100vh;
+  color: white;
+  overscroll-behavior: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dark {
+  --background: 145 40% 5%;
+  --foreground: 145 40% 95%;
+  --card: 145 40% 10%;
+  --card-foreground: 145 40% 95%;
+  --popover: 145 40% 9%;
+  --popover-foreground: 145 40% 95%;
+  --primary: 145 60% 25%;
+  --primary-foreground: 145 40% 97%;
+  --secondary: 145 40% 15%;
+  --secondary-foreground: 145 40% 98%;
+  --muted: 145 40% 15%;
+  --muted-foreground: 145 30% 65%;
+  --accent: 145 40% 15%;
+  --accent-foreground: 145 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 85.7% 97.3%;
+  --border: 145 40% 20%;
+  --input: 145 40% 20%;
+  --ring: 145 60% 25%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .font-script {
+    font-family: var(--font-great-vibes);
+  }
+}
+
+.bg-bayou {
+  background: linear-gradient(to bottom, hsl(145 40% 15%), hsl(145 40% 5%));
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-text {
+  color: hsl(var(--gold));
+  text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+}
+
+.border-gold {
+  border-color: hsl(var(--gold));
+}
+
+.bg-burgundy {
+  background-color: #800020;
+}
+
+/* Efectos de brillo para elementos dorados */
+.gold-border {
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Efecto de transición suave para hover */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+/* Estilos para el tema de Princesa Tiana */
+.tiana-theme {
+  background: linear-gradient(135deg, hsl(145 40% 15%), hsl(145, 43%, 39%));
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animación de luciérnagas mejorada */
+@keyframes firefly {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  25% {
+    transform: translateY(-15px) translateX(15px) scale(1.1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-25px) translateX(5px) scale(1.2);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-10px) translateX(-10px) scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+}
+
+.firefly {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 215, 0, 0.9);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: firefly 4s ease-in-out infinite;
+  box-shadow: 0 0 5px 1px rgba(255, 215, 0, 0.5);
+}
+
+.firefly::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 215, 0, 0.4);
+  border-radius: 50%;
+  filter: blur(2px);
+  transform: scale(2.5);
+}
+
+.firefly:nth-child(2n) {
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.firefly:nth-child(3n) {
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+
+.firefly:nth-child(4n) {
+  animation-duration: 7s;
+  animation-delay: 3s;
+}
+
+.lotus-decoration:hover::before {
+  opacity: 0.9;
+  transform: scale(1.1);
+}

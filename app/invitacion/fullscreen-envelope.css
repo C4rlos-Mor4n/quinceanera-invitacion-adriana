@@ -1,0 +1,27 @@
+/* Estilos para el sobre a pantalla completa */
+.fullscreen-envelope {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  overflow: hidden;
+  background-color: #9ccd74;
+}
+
+/* Estilos para asegurar que el sobre ocupe toda la pantalla */
+.envelope-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 640px) {
+  .envelope-content {
+    padding: 1rem;
+  }
+}
